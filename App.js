@@ -8,7 +8,7 @@ import {
   NativeBaseProvider,
 } from 'native-base';
 import { useState } from 'react';
-import { SafeAreaView, View } from 'react-native';
+import { SafeAreaView, View, StyleSheet } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
@@ -52,14 +52,11 @@ export default function App() {
           >
             <CameraView
               facing="back"
+              ratio='4:3'
               barcodeScannerSettings={{
                 barcodeTypes: ['qr'],
               }}
-              style={{
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
+              style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
             ></CameraView>
           </ModalMy>
         </SafeAreaView>

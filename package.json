@@ -14,6 +14,7 @@
     "expo-camera": "^15.0.14",
     "expo-status-bar": "~1.12.1",
     "native-base": "^3.4.28",
+    "patch-package": "^8.0.0",
     "react": "18.2.0",
     "react-native": "0.74.3",
     "react-native-barcode-mask": "^1.2.4",
