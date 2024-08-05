@@ -8,7 +8,7 @@ import {
   NativeBaseProvider,
 } from 'native-base';
 import { useState } from 'react';
-import { SafeAreaView, View } from 'react-native';
+import {SafeAreaView, useWindowDimensions, View} from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NativeBaseProvider>
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
           <Box
             style={{
               flex: 1,
@@ -57,8 +57,9 @@ export default function App() {
               }}
               style={{
                 flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
+                alignSelf: 'center',
+                aspectRatio: 1,
+                marginTop: '5%'
               }}
             ></CameraView>
           </ModalMy>
@@ -69,6 +70,7 @@ export default function App() {
 }
 
 const ModalMy = ({ children, showModal, setShowModal }) => {
+    const {height} = useWindowDimensions()
   return (
     <Modal
       p={5}
@@ -79,7 +81,7 @@ const ModalMy = ({ children, showModal, setShowModal }) => {
       <Modal.Content>
         <Modal.CloseButton onPress={() => setShowModal(false)} />
         <Modal.Header>Test Modal</Modal.Header>
-        <Modal.Body height={'xs'}>{children}</Modal.Body>
+        <Modal.Body maxHeight={((height/1.3))*.5} height={'xs'}>{children}</Modal.Body>
       </Modal.Content>
     </Modal>
   );
