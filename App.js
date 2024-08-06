@@ -1,4 +1,4 @@
-import { CameraView, useCameraPermissions } from 'expo-camera';
+import { CameraView, useCameraPermissions, } from 'expo-camera';
 import {
   Box,
   Button,
@@ -52,7 +52,7 @@ export default function App() {
           >
             <CameraView
               facing="back"
-              ratio='4:3'
+              ratio='1:1'
               barcodeScannerSettings={{
                 barcodeTypes: ['qr'],
               }}
