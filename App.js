@@ -1,15 +1,16 @@
-import { CameraView, useCameraPermissions } from 'expo-camera';
+import { CameraView, useCameraPermissions } from "expo-camera";
+import { useState } from "react";
 import {
-  Box,
+  NativeBaseProvider as NBGUIProvider,
+  View,
   Button,
+  Modal,
+  Box,
   Heading,
   HStack,
-  Modal,
-  NativeBaseProvider,
-} from 'native-base';
-import { useState } from 'react';
-import { SafeAreaView, View } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+} from "@gluestack-ui/themed-native-base";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaView, StyleSheet } from "react-native";
 
 export default function App() {
   const [showModal, setShowModal] = useState(false);
@@ -21,22 +22,18 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <NativeBaseProvider>
+      <NBGUIProvider>
         <SafeAreaView style={{ flex: 1 }}>
           <Box
             style={{
               flex: 1,
-              alignItems: 'center',
-              justifyContent: 'center',
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <Heading color={'white'}>Hello</Heading>
+            <Heading color={"white"}>Hello</Heading>
 
-            <HStack
-              space="4"
-              justifyContent="center"
-              alignItems="center"
-            >
+            <HStack space="4" justifyContent="center" alignItems="center">
               <Button
                 onPress={() => {
                   setShowModal(true);
@@ -46,40 +43,31 @@ export default function App() {
               </Button>
             </HStack>
           </Box>
-          <ModalMy
-            setShowModal={setShowModal}
-            showModal={showModal}
-          >
+          <ModalMy setShowModal={setShowModal} showModal={showModal}>
             <CameraView
               facing="back"
+              ratio="1:1"
               barcodeScannerSettings={{
-                barcodeTypes: ['qr'],
+                barcodeTypes: ["qr"],
               }}
-              style={{
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
+              style={{ aspectRatio: 1 }}
             ></CameraView>
           </ModalMy>
         </SafeAreaView>
-      </NativeBaseProvider>
+      </NBGUIProvider>
     </SafeAreaProvider>
   );
 }
 
 const ModalMy = ({ children, showModal, setShowModal }) => {
   return (
-    <Modal
-      p={5}
-      isOpen={showModal}
-      onClose={setShowModal}
-      size={'full'}
-    >
+    <Modal p={15} isOpen={showModal} onClose={setShowModal} size={"full"}>
       <Modal.Content>
         <Modal.CloseButton onPress={() => setShowModal(false)} />
         <Modal.Header>Test Modal</Modal.Header>
-        <Modal.Body height={'xs'}>{children}</Modal.Body>
+        <Modal.Body display={"flex"} height={"xs"}>
+          {children}
+        </Modal.Body>
       </Modal.Content>
     </Modal>
   );
