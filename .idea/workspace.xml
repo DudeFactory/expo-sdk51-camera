@@ -7,7 +7,8 @@
     <list default="true" id="6e39e33d-32fe-4b48-b387-744b2565fef0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patches/expo-camera+15.0.14.patch" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +36,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/daniiltolmachov/.nvm/versions/node/v22.2.0/lib/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -55,7 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1722952150296</updated>
       <workItem from="1722952151432" duration="14000" />
-      <workItem from="1722952165842" duration="3068000" />
+      <workItem from="1722952165842" duration="16428000" />
     </task>
     <servers />
   </component>
